@@ -39,6 +39,10 @@ body {
   color: #fff;
 }
 
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+  margin-left:0;
+}
+
 .navbar img {
   width: 10em;
   margin-left: 15px;
@@ -79,9 +83,14 @@ i.menu-icon {
 }
 
 .input-group {
-  width: 85%;
+  width:85%%;
   margin: auto;
   padding: 1.5em .25em;
+}
+
+#button-group {
+  width:85%;
+  margin:auto;
 }
 
 .services_buttons {
@@ -96,7 +105,7 @@ i.menu-icon {
 }
 
 .guide-btn, .find-btn, .resources-btn {
-  width:85%;
+  width:100%;
 }
 
 .opening-info {
@@ -131,10 +140,8 @@ footer p {
 }
 
 /* collapsed sidebar styles and styles for tablets/mobile */
-@media screen and (max-width: 767px) {
-  .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-    /*display:none;*/
-   }
+@media (max-width: 767px) {
+
   .row-offcanvas {
     position: relative;
     -webkit-transition: all 0.25s ease-out;
@@ -166,9 +173,9 @@ footer p {
   }
 }
 
+
 /* full-screen styles */
-@media screen and (min-width: 768px) {
-  .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-    margin-left:.25em;
-  }
+@media (min-width: 991px) {
+
+
 }
