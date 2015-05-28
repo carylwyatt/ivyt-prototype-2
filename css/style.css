@@ -10,6 +10,10 @@ Colors:
 */
 @import url(http://fonts.googleapis.com/css?family=Lato|Cinzel:400,700);
 
+html, body {
+  height:100%;
+}
+
 body {
   padding-top: 3.2em;
   font-family: 'Lato', 'Arial', sans-serif;
@@ -18,9 +22,28 @@ body {
 
 .container {
   width: 100%;
+  min-height:100%;
+  overflow:hidden;
 }
 .text-center {
   padding-top: 20px;
+}
+
+.navbar {
+  border: none;
+  background-color:#006648;
+  min-height:54px;
+}
+
+.navbar .navbar-brand, .navbar .navbar-brand:hover {
+  color: #fff;
+}
+
+.navbar img {
+  width: 10em;
+  margin-left: 15px;
+  transform: translateY(8%);
+  border: 2.5px white solid;
 }
 .col-xs-12 {
   background-color: #fff;
@@ -29,13 +52,21 @@ body {
   height: 100%;
   padding-right: 0;
   padding-top: 1.3em;
+  background-color:lightgrey;
+  margin-bottom:-9999px;
+  padding-bottom:9999px;
 }
 #sidebar .nav {
   width: 95%;
 }
 #sidebar li {
-  border:0 #f2f2f2 solid;
-  border-bottom-width:1px;
+}
+#sidebar li a {
+  color:#006648;
+}
+
+i.menu-icon {
+  margin:0 1rem 0 0;
 }
 
 .col-xs-12.col-sm-9 {
@@ -43,10 +74,20 @@ body {
   padding-left:0;
 }
 
+.main-search {
+  background-color:whitesmoke;
+}
+
 .input-group {
   width: 85%;
   margin: auto;
-  padding: .75em .25em;
+  padding: 1.5em .25em;
+}
+
+.services_buttons {
+  padding:4em 0;
+  background-image: url('../img/round-lib.jpg');
+  background-position:center;
 }
 
 .main_buttons {
@@ -61,7 +102,7 @@ body {
 .opening-info {
   text-align: center;
   padding: 1.5em 0;
-  background-color:lightgray;
+  background-color:whitesmoke;
 }
 
 .events-info, .news-info {
@@ -69,18 +110,31 @@ body {
   margin: auto;
   padding:.5em;
 }
+.events-info p, .news-info p {
+  margin-left:2em;
+}
 
 footer {
   padding: 1em 0;
-  background-color: lightgrey;
+  background-color: whitesmoke;
 }
 
 footer p {
   padding-left:1em;
 }
 
-/* collapsed sidebar styles */
+/* styles for mobile */
+@media screen and (max-width: 500px) {
+  .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    display:none;
+   }
+}
+
+/* collapsed sidebar styles and styles for tablets/mobile */
 @media screen and (max-width: 767px) {
+  .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    /*display:none;*/
+   }
   .row-offcanvas {
     position: relative;
     -webkit-transition: all 0.25s ease-out;
@@ -109,5 +163,12 @@ footer p {
   }
   #sidebar {
     padding-top:0;
+  }
+}
+
+/* full-screen styles */
+@media screen and (min-width: 768px) {
+  .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    margin-left:.25em;
   }
 }
